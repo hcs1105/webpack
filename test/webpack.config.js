@@ -11,13 +11,15 @@ module.exports = {
   },
   module : {
     rules: [
+			/*
       {
         test: /\.js$/, // .js 확장자로 끝나는 모든 파일
-        use: [path.resolve('./myloader.js')] // 방금 만든 로더 파일 적용
+        use: [path.resolve('./myloader.js')], // 방금 만든 로더 파일 적용
       },
+			*/
       {
         test: /\.css$/, // .css 확장자로 끝나는 모든 파일
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -27,7 +29,7 @@ module.exports = {
 				},   
 				parser: {
           dataUrlCondition: {
-            maxSize: 100,
+            maxSize: 5000,
           },
         },
       },
