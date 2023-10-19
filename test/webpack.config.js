@@ -1,4 +1,5 @@
 const path = require('path'); // 경로 지정
+const MyPlugin = require("./myplugin");
 
 module.exports = {
   mode: 'development',
@@ -34,5 +35,8 @@ module.exports = {
         },
       },
     ],
-  }
+  }, 
+  plugins: [
+    new MyPlugin(),
+  ],
 };
