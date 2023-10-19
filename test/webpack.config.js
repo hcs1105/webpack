@@ -1,5 +1,7 @@
 const path = require('path'); // 경로 지정
-const MyPlugin = require("./myplugin");
+// const MyPlugin = require("./myplugin");
+const webpack = require('webpack');
+const banner = require("./banner")
 
 module.exports = {
   mode: 'development',
@@ -37,6 +39,7 @@ module.exports = {
     ],
   }, 
   plugins: [
-    new MyPlugin(),
+    // new MyPlugin(),
+    new webpack.BannerPlugin(banner),
   ],
 };
