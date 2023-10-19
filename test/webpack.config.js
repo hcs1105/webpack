@@ -41,5 +41,6 @@ module.exports = {
   plugins: [
     // new MyPlugin(),
     new webpack.BannerPlugin(banner),
+    new webpack.DefinePlugin({}),
   ],
 };
