@@ -1,7 +1,8 @@
 const path = require('path'); // 경로 지정
 // const MyPlugin = require("./myplugin");
 const webpack = require('webpack');
-const banner = require("./banner")
+const banner = require("./banner");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -41,6 +42,17 @@ module.exports = {
   plugins: [
     // new MyPlugin(),
     new webpack.BannerPlugin(banner),
-    new webpack.DefinePlugin({}),
+    new webpack.DefinePlugin({}),    
+    new HtmlWebpackPlugin({
+      template: './src/index.html', // 템플릿 경로를 지정
+      templateParameters: { // 템플릿에 주입할 파라미터 변수 지정
+        env: process.env.NODE_ENV === 'development' ? '- 개발용' : '',
+      },
+      minify: process.env.NODE_ENV === 'production' ? {
+        collapseWhitespace: true, // 빈칸 제거
+        removeComments: true, // 주석 제거
+      } : false,
+      hash: true, // 정적 파일을 불러올 때 쿼리 문자열에 웹팩 해시값을 추가
+    })
   ],
 };
