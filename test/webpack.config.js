@@ -62,10 +62,11 @@ module.exports = {
       hash: true, // 정적 파일을 불러올 때 쿼리 문자열에 웹팩 해시값을 추가
     }),
     new CleanWebpackPlugin(),
-    process.env.NODE_ENV === "production" ? 
+    (process.env.NODE_ENV === "production" ? 
 			new MiniCssExtractPlugin({ 
 				filename: `[name].css`, // production 
 			}) 
 			: '' // development
+		), 
   ],
 };
