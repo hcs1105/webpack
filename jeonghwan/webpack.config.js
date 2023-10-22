@@ -14,11 +14,11 @@ module.exports = {
 	module : {
 		rules : [
 			{
-				test : /\.css$/,
+				test : /\.(css|scss)$/,
 				use : ['style-loader','css-loader'],
 			},
 			{
-				test : /\.png$/,
+				test : /\.(png|jpe?g|gif|svg)$/,
 				use : [{
 					loader : 'file-loader',
 					options : {
