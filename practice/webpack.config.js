@@ -37,6 +37,11 @@ module.exports = {
           },
         },
       },
+			{
+				test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader', // 바벨 로더 추가
+			},
     ],
   }, 
   plugins: [

@@ -7,9 +7,7 @@ module.exports = {
 				ie: '11', // ie 11까지 지원
 			},
 			useBuiltIns: 'usage',   
-			corejs: {
-				version: 2, // 폴리필 버전 지정
-			},
+			corejs: '3.33.1', // 폴리필 버전 지정
 		}],
 	],
 }
