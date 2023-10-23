@@ -6,6 +6,10 @@ module.exports = {
 				chrome: '118', // 크롬 118 버전까지 지원
 				ie: '11', // ie 11까지 지원
 			},
+			useBuiltIns: 'usage',   
+			corejs: {
+				version: 2, // 폴리필 버전 지정
+			},
 		}],
 	],
 }
